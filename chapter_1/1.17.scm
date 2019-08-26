@@ -1,0 +1,17 @@
+(define (remainder b n)
+  (cond ((or (> (- b n) n) (= (- b n) n))
+           (remainder (- b n) n))
+        ((= (- b n) 0) 0)
+        (else (abs (- b n)))
+  ))
+
+(define (even? n)
+    (= (remainder n 2) 0))
+(define (double x) (+ x x))
+(define (halve x) (/ x 2))
+
+(define (multiply x y)
+  (cond ((= y 0) 0)
+        ((even? y)
+          (multiply (double x) (halve y)))
+        (else (+ x (multiply x (- y 1))))))
