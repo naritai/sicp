@@ -2,8 +2,7 @@
   (cond ((or (> (- b n) n) (= (- b n) n))
            (remainder (- b n) n))
         ((= (- b n) 0) 0)
-        (else (abs (- b n)))
-  ))
+        (else (abs (- b n)))))
 
 (define (even? n)
     (= (remainder n 2) 0))
